@@ -9,6 +9,7 @@ $color : rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
     background-image: url("https://random.imagecdn.app/250/250");
+    background-color: rgba($color: $silk, $alpha: .5);
     .letterA{
         color: $complementer-red;
         position: absolute;

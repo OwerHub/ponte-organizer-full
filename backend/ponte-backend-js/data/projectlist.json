@@ -1,33 +1,92 @@
 [
   {
-    "name": "végre működik ",
-    "description": "",
+    "name": "Create new backend in JS",
+    "description": "For a while, I 'll use JS, for practice. After everything works, I'll recreated in TS",
     "collaborators": [
       {
-        "name": "Jószerencse",
-        "position": "tudás",
-        "id": 1662933572692
+        "name": "Owerwild",
+        "position": "Devil-oper",
+        "id": 1662956301221
       }
     ],
-    "links": [],
-    "id": 1662933574491
+    "links": [
+      {
+        "name": "Great music for dev",
+        "link": "https://www.youtube.com/watch?v=sa0j92AEhNM&t=6806s",
+        "id": 1662956350872
+      }
+    ],
+    "id": 1662956353946
   },
   {
-    "name": "asdasdasdasd",
-    "description": "",
+    "name": "Unravel the mysteries of its deletion",
+    "description": "Okay, its magic. Or I just didn't notice something. The deleted projects came back. One deleted, one returns. (every projectmanager worst nightmare). I want to know, why",
     "collaborators": [
       {
-        "name": "asdasdasd",
-        "position": "asdasddas",
-        "id": 1662953917602
+        "name": "Owerwild again",
+        "position": "Exporer... or something",
+        "id": 1662956597224
       },
       {
-        "name": "asdasdasd",
-        "position": "asdasdasd",
-        "id": 1662953919794
+        "name": "devil on my sholder",
+        "position": "say \"You cant sleep, while U dont know\"",
+        "id": 1662956629267
+      }
+    ],
+    "links": [
+      {
+        "name": "What we drink",
+        "link": "https://hellenergystore.com/products/strong-watermelon",
+        "id": 1662956714044
+      },
+      {
+        "name": "What we listen",
+        "link": "https://www.youtube.com/watch?v=YowecATKJPM&t=1595s",
+        "id": 1662956750196
+      }
+    ],
+    "id": 1662956764236
+  },
+  {
+    "name": "Rule The world ",
+    "description": "We make a Magic Weapon.\nWe threaten the world. \nEveryone obeys us. \nWe're having a huge party!!!!",
+    "collaborators": [
+      {
+        "name": "Dr No",
+        "position": "Figure Out the Plan",
+        "id": 1662957040153
+      },
+      {
+        "name": "Dr Evil",
+        "position": "Beat Austin Powers",
+        "id": 1662957050600
+      },
+      {
+        "name": "Dr. Akula",
+        "position": "Cause I like a dad jokes",
+        "id": 1662957077792
+      }
+    ],
+    "links": [
+      {
+        "name": "recipe 1",
+        "link": "https://www.youtube.com/watch?v=-1CE4P8qqPE",
+        "id": 1662957110648
+      }
+    ],
+    "id": 1662957111804
+  },
+  {
+    "name": "Likes this HomeWork",
+    "description": "Okay, it can still be perfected. Nothing is perfect. But I think it turned out well. So, your taks is: Like this. And give me another coffe :D :D :D ",
+    "collaborators": [
+      {
+        "name": "All Ponte member",
+        "position": "Mentor",
+        "id": 1662957594205
       }
     ],
     "links": [],
-    "id": 1662953921907
+    "id": 1662957785402
   }
 ]
