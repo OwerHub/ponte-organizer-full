@@ -1,0 +1,30 @@
+@import "../../style/colors";
+
+.progressBarContainer{
+    //background-color: $complementer-dark;
+    background-color: $complementer-red;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .progressCircle{
+        height: 2.5rem;
+        width: 2.5rem;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        transition: .5s;
+    }
+}
+
+.selectedCircle{
+    background-color: white;
+}
+.unSelectedCircle{
+    background-color: $complementer-red;
+
+}

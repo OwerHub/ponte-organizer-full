@@ -1,0 +1,41 @@
+.cardOuter {
+  background-color: #0192b7;
+  width: 20%;
+  min-width: 230px;
+  min-height: 40vh;
+  margin: 1rem;
+  padding: 0.5rem 0 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.cardOuter div {
+  max-width: 80%;
+}
+
+.buttonDiv {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+}
+.buttonDiv button {
+  width: 3rem;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardTitle {
+  margin: 0.5rem 0;
+  font-size: 110%;
+  font-weight: bolder;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}

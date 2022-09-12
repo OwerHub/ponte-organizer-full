@@ -1,0 +1,130 @@
+@import "../../style/colors";
+
+.newProdPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+
+  .newProgPageHead {
+    justify-content: center;
+    text-align: center;
+    padding: 0.2rem 0;
+  }
+
+  .newProdPageFooter {
+    //background-color: $complementer-red;
+    background-color: $complementer-dark;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    button {
+      padding: 0.3rem;
+      width: 5rem;
+    }
+  }
+}
+
+.inputsStandard {
+  font-size: 130%;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+
+.inputDivStandard{
+
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.inputErrorDiv {
+    height: 2rem;
+}
+
+.newProdPage1 {
+    .inputDiv {
+        @extend .inputDivStandard;
+        padding: 0 2rem 0.5rem 1rem;
+        input {
+            @extend .inputsStandard;
+            width: 50%;
+        }
+        textarea {
+            @extend .inputsStandard;
+            resize: none;
+      width: 50%;
+    }
+  
+}
+}
+
+.newProdPage2 {
+    .page2BodyWrapper {
+        display: flex;
+        height: 65vh;
+
+        .inputWrapper {
+            /*  display: flex;
+            flex-direction: column;
+            justify-content: center; */
+            padding: 5vh 0 0 ;
+            width: 50%;
+            .inputDiv{
+                @extend .inputDivStandard;
+                input{
+                    @extend .inputsStandard;
+                }
+            }
+        }
+        
+        .collaboratorWrapper{
+        width: 50%;
+        .collaboratorListhead{
+            text-align: center;
+        }
+        .colllegeList{
+            overflow-y: auto;
+            height: 65vh;
+            .collaboratorCard{
+                margin: 1rem .8rem;
+                padding: .3rem .8rem .5rem;
+                border-radius: 5px;
+                background-color: whitesmoke;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .collaboratorCardata{
+                    
+                    div:first-child{
+                        font-weight: bold;
+                    };
+                    div:nth-child(2){
+                        margin: 0 0 0 1rem;
+                    }
+                }
+                .delete{
+                    cursor: pointer;
+                    &:hover{
+                        color:red
+                    }
+                }
+            }
+        }
+    }    
+
+  }
+}
+.addButton{
+    height: 2rem;
+}
+
+.collabWarn{
+    margin: 1rem 0;
+    text-align: center;
+    color:$complementer-red;
+}

@@ -1,0 +1,146 @@
+import "./dist/main.css";
+
+import { useState, useEffect } from "react";
+import { Iproject } from "../../types/projectTypes";
+import { fakebackendAnswer,  fakebackendAdd, fakebackendDelete } from "../../services/fakeBackend";
+import {getDataFromBackend , sendProjectToBackend , deleteProjectInBackend} from "../../services/connectToBackend"
+
+import { PictureFromText } from "../picture/PictureFromText";
+import { CardContainer } from "../cardContainer/cardContainer";
+import { NewProduct } from "../newProduct/NewProduct";
+import { ResultModal } from "../resultModal/Resultmodal";
+import { LoadingSpinner } from "../loading/LoadngSpinner";
+
+
+
+export const Main = () => {
+  const [isProjectArray, setProjectArray] = useState<Iproject[]>([]);
+  const [isFakeBackend, setFakeBackend] = useState<boolean>(false)
+
+  const [isNewModalOpen, setNewModalOpen] = useState<boolean>(false);
+  const [isResultModalOpen, setResultModalOpen] = useState<boolean>(false) 
+  const [isLoading, setLoading] = useState<boolean>(false)
+
+  const [isResultId, setResultId] = useState<number>(0) 
+  const [isSearchText, setSearchText] = useState<string>("")
+
+
+  async function askProject() {
+    setLoading(true);
+    let solved;
+
+    if (isFakeBackend) {
+      solved = await fakebackendAnswer(1500);
+    } else {
+      solved = await getDataFromBackend();
+    }
+
+    setProjectArray(solved as Iproject[]);
+    setLoading(false);
+  }
+  
+  
+  async  function addProject (project:Iproject){
+    setLoading(true)
+    setNewModalOpen(false);
+    let solved
+    if(isFakeBackend) {
+      solved = await fakebackendAdd(project, 400)
+    } else {
+      solved =   await   sendProjectToBackend(project)
+    }
+
+    setProjectArray(solved as Iproject[])
+    setLoading(false)
+  }
+  
+  
+  async function deleteProject(deleteID: number) {
+    setLoading(true);
+    let solved;
+    if (isFakeBackend) {
+      solved = await fakebackendDelete(deleteID, 400);
+    } else {
+      solved = await deleteProjectInBackend(deleteID);
+    }
+    setProjectArray(solved as Iproject[]);
+    setLoading(false);
+  }
+
+
+    const showresult = (id: number) => {
+      setResultId(id);
+      setResultModalOpen(true);
+    };
+
+     const filterProjectArray = (projectArray: Iproject[]) => {
+       if (isSearchText.length === 0) {
+         return projectArray;
+       }
+
+       return projectArray.filter((project) =>
+         project.name.toLowerCase().match(isSearchText.toLowerCase())
+       );
+     };
+
+
+     // test the new backend
+  const askRealBackend = () => {
+    getDataFromBackend()
+  }
+
+  
+
+  useEffect(() => {
+    askRealBackend();
+    askProject();
+  }, []);
+
+  return (
+    <div className="mainWrapper">
+
+      <div className="head">
+        <h1>PonteProjects</h1>
+        <div className="headHandles">
+          <button onClick={() => setNewModalOpen(true)}>new task</button>
+          <input
+            type="text"
+            placeholder="search"
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <div className="cardDiv">
+        {isProjectArray.length > 0 && (
+          <CardContainer
+            projects={filterProjectArray(isProjectArray)}
+            deleteCard={(id) => deleteProject(id)}
+            resultCard={(id) => showresult(id)}
+          />
+        )}
+      </div>
+
+      <div>
+        {isNewModalOpen && (
+          <NewProduct
+            close={() => setNewModalOpen(false)}
+            saveProject={(project: Iproject) => {
+              addProject(project);
+            }}
+          />
+        )}
+
+        {isResultModalOpen && (
+          <ResultModal
+            id={isResultId}
+            close={() => setResultModalOpen(false)}
+            fakeBackend = {isFakeBackend}
+          />
+        )}
+      </div>
+
+      <div>{isLoading && <LoadingSpinner />}</div>
+    </div>
+  );
+};
